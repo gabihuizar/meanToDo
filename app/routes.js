@@ -34,7 +34,7 @@ module.exports = function(app){
 
     app.delete('/api/todos/:todo_id', function(req, res){
         toDo.remove({
-            _id: req.params.todo_id;
+            _id: req.params.todo_id
         }, function(err, todo){
             if(err){
                 res.send(err);
@@ -46,5 +46,10 @@ module.exports = function(app){
                 res.json(todos);
             });
         });
+    });
+
+    //application
+    app.get('*', function(req, res){
+        res.sendfile('../public/index.html');
     });
 }
