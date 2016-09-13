@@ -4,6 +4,8 @@ var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override')
+    
+require('./app/routes')(app);
 
 mongoose.connect('mongodb://gaby:mean@jello.modulusmongo.net:27017/R7idatyx');
 
